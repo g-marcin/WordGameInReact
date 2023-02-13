@@ -3,13 +3,14 @@ import GuessInput from "../GuessInput/GuessInput";
 import { sample } from "../../utils";
 import { WORDS } from "../../data";
 import PreviousGuesses from "../PreviousGuesses/PreviousGuesses";
+import "../../styles.css";
 
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import WinBanner from "../WinBanner/WinBanner";
 import LostBanner from "../LostBanner/LostBanner";
 
-import ResetButton from "../ResetButton/ResetButton";
 import Button from "../Button/Button";
+import VisibleKeyboard from "../VisibleKeyboard/VisibleKeyboard";
 
 const answer = sample(WORDS);
 console.info({ answer });
@@ -37,6 +38,7 @@ function Game() {
     <>
       {/* {status} for testing/debugging purpose*/}
       <PreviousGuesses previousGuesses={previousGuesses} answer={answer} setStatus={setStatus} />
+      <VisibleKeyboard inputValue={inputValue} setInputValue={setInputValue} />
       {status !== "running" && (
         <Button
           onClick={() => {

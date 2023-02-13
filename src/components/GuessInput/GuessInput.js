@@ -8,7 +8,7 @@ function GuessInput({ inputValue, setInputValue, addGuessedValue, status }) {
         let guess = document.getElementById("guess-input").value.toUpperCase();
         console.log({ guess: guess });
         addGuessedValue(guess);
-
+        console.log(e);
         setInputValue("");
       }}
       className="guess-input-wrapper"
