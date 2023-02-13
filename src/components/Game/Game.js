@@ -8,6 +8,9 @@ import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import WinBanner from "../WinBanner/WinBanner";
 import LostBanner from "../LostBanner/LostBanner";
 
+import ResetButton from "../ResetButton/ResetButton";
+import Button from "../Button/Button";
+
 const answer = sample(WORDS);
 console.info({ answer });
 
@@ -32,8 +35,17 @@ function Game() {
 
   return (
     <>
-      {status}
+      {/* {status} for testing/debugging purpose*/}
       <PreviousGuesses previousGuesses={previousGuesses} answer={answer} setStatus={setStatus} />
+      {status !== "running" && (
+        <Button
+          onClick={() => {
+            console.log("działam");
+            setPreviousGuesses([]);
+            setStatus("running");
+          }}
+        />
+      )}
       <GuessInput inputValue={inputValue} setInputValue={setInputValue} addGuessedValue={addGuessedValue} status={status} />
       <br />
       {status === "won" && <WinBanner numOfGuesses={previousGuesses.length} />}
