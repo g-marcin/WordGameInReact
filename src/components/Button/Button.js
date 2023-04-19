@@ -1,8 +1,8 @@
 import React from "react";
 import "../../reset.css";
 
-function Button({ onClick }) {
-  return <button onClick={onClick}>Reset</button>;
+function Button({ onClick, label }) {
+  return <button onClick={onClick}>{label}</button>;
 }
 
 export default Button;
