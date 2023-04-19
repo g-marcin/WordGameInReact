@@ -38,7 +38,11 @@ function Game() {
     <>
       {/* {status} for testing/debugging purpose*/}
       <PreviousGuesses previousGuesses={previousGuesses} answer={answer} setStatus={setStatus} />
+<<<<<<< HEAD
       {/* <VisibleKeyboard inputValue={inputValue} setInputValue={setInputValue} /> */}
+=======
+//       <VisibleKeyboard inputValue={inputValue} setInputValue={setInputValue} />
+>>>>>>> 88ba659461c8cf65adf7a5e1bc7ee8732b795895
       {status !== "running" && (
         <Button
           onClick={() => {
